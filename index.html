@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gold Cost Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image" href="https://raw.githubusercontent.com/vasu-313/logo-jewellery-shop/refs/heads/main/gold-cost-calculator-logo.webp">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <section class="home" id="home">
+        <!-- Main Navigation -->
+        <header class="navbar">
+            <div class="logo-text">
+                <a href="#home"><i class='bx bx-calculator'></i></a>Gold Cost Calculator
+            </div>
+            <!-- Mobile Menu Icon -->
+            <div class="menu-icon" id="menu-icon">
+                <i class='bx bx-menu'></i>
+            </div>
+
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#contact">Contact Us</a>
+            </div>
+        </header>
+
+        <div class="side-menu" id="side-menu">
+            <div class="close-btn" id="close-menu"><i class='bx bx-x'></i></div>
+            <a href="#home" onclick="closeMenu()">Home</a>
+            <a href="#contact" onclick="closeMenu()">Contact Us</a>
+        </div>
+
+        <!-- Live Gold Cost Section -->
+        <div class="second-nav">
+            <div class="live-cost">
+                <!-- <label for="stateSelect" class="live">Select State:</label> -->
+                <select id="stateSelect">
+                    <option value="" disabled selected>Select a city</option>
+                    <option value="Ahmedabad">Ahmedabad</option>
+                    <option value="Amritsar">Amritsar</option>
+                    <option value="Bengaluru">Bengaluru</option>
+                    <option value="Bhopal">Bhopal</option>
+                    <option value="Chennai">Chennai</option>
+                    <option value="Coimbatore">Coimbatore</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Faridabad">Faridabad</option>
+                    <option value="Gurugram">Gurugram</option>
+                    <option value="Hyderabad">Hyderabad</option>
+                    <option value="Jaipur">Jaipur</option>
+                    <option value="kanpur">kanpur</option>
+                    <option value="Kochi">Kochi</option>
+                    <option value="Kolkata">Kolkata</option>
+                    <option value="Lucknow">Lucknow</option>
+                    <option value="Madurai">Madurai</option>
+                    <option value="Meerut">Meerut</option>
+                    <option value="Mumbai">Mumbai</option>
+                    <option value="Visakhapatnam">Visakhapatnam</option>
+                </select>
+
+                <!-- <label for="gold-live-cost"  class="live">Live Cost :</label> -->
+                <div id="gold-live-cost">Live Cost: Loading...</div>
+            </div>
+        </div>
+
+        <!-- home section design -->
+        <div class="home-box">
+            <div class="contentBox">
+                <div class="form-box">
+                    <h2 id="one">GOld Cost Calculator</h2>
+                    <form action="#">
+                        <div class="inputBox">
+                            <span>1 Gram Gold Cost(24k)</span>
+                            <input type="text" id="num1">
+                        </div>
+
+                        <div class="inputBox">
+                            <span>Weight(grams)</span>
+                            <input type="text" id="num2">
+                        </div>
+
+                        <div class="inputBox input-row ">
+                            <div class="half-input">
+                                <select id="num3" class="karat-options">
+                                    <option class="selectKarat" value="">Select Karat</option>
+                                    <option value="24">24K (99.99%)</option>
+                                    <option value="22">22K (91.67%)</option>
+                                    <option value="20">20K (83.33%)</option>
+                                    <option value="18">18K (75%)</option>
+                                    <option value="16">16K (66.67%)</option>
+                                    <option value="14">14K (58.33%)</option>
+                                </select>
+                            </div>
+                            <div class="half-input">
+                                <input placeholder="Percentage(%)" type="text" id="num4" class="percentage">
+                                <span class="overlay-text">Click to find Resale value!</span>
+                            </div>
+                        </div>
+
+                        <div class="inputBox">
+                            <button id="cal-btn" type="submit">Calculate</button>
+                        </div>
+
+                        <div class="inputBox">
+                            <span>Your Gold Cost</span>
+                            <input type="text" id="costBox" readonly>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="imgBox">
+                <img src="https://gitlab.com/vasulakkoju313/portfolio-data/-/raw/main/x.png?ref_type=heads" alt="gold">
+            </div>
+        </div>
+
+    </section>
+
+
+    <!--contact section-->
+    <section class="contact" id="contact">
+        <div class="contentBox1">
+            <div class="formBox">
+                <h2 id="two">Contact Us</h2>
+
+                <form action="https://api.web3forms.com/submit" method="POST" target="_blank">
+
+                    <input type="hidden" name="access_key" value="0cc8d936-e9ab-4b99-904e-65c3baf8a994">
+
+                    <div class="inputBox">
+                        <span>Name</span>
+                        <input type="text" name="name" id="name" required>
+                    </div>
+
+                    <div class="inputBox">
+                        <span>Email</span>
+                        <input type="email" name="email" id="email" required>
+                    </div>
+
+                    <div class="inputBox">
+                        <span>subject</span>
+                        <textarea id="sub" name="subject" required></textarea>
+                    </div>
+
+                    <div class="inputBox">
+                        <button type="submit">Submit</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </section>
+
+    <script type="module" src="app.js"></script>
+</body>
+
+</html>
+
+
+<!-- window.sendMail creates a function that can be called globally in your HTML -->
+<!-- "Since I placed the config.js file before app.js in the HTML, the data from config.js can be used in app.js." -->

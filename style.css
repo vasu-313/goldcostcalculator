@@ -88,7 +88,7 @@ body {
 
 } */
 
-select#stateSelect {
+select#citySelect {
     width: 287.88px;
     height: 30px;
     background-color: var(--main-color);
@@ -566,7 +566,7 @@ img {
         padding: 10px 15px;
     }
 
-    select#stateSelect {
+    select#citySelect {
         width: 150.88px;
         font-size: 16px;
     }
@@ -630,7 +630,7 @@ img {
         margin-bottom: 20px;
     }
 
-    select#stateSelect {
+    select#citySelect {
         width: 135.88px;
         font-size: 15px;
     }
@@ -679,7 +679,7 @@ img {
         margin-bottom: 0px !important;
     }
 
-    select#stateSelect {
+    select#citySelect {
         width: 132.88px;
         font-size: 13px;
 
@@ -729,7 +729,7 @@ img {
         background-position: right 3px center;
     }
 
-    select#stateSelect {
+    select#citySelect {
         width: 104.88px;
         font-size: 11px;
     }

@@ -68,16 +68,23 @@ btn.addEventListener('click', (e) => {
 // Live cost
 
 const goldCost = document.getElementById('gold-live-cost');
-const stateSelect = document.getElementById('stateSelect');
+const citySelect = document.getElementById('citySelect');
 
-let stateCosts = {};
+let cityCosts = {};
 
 const liveCost = async () => {
     try {
         const response = await fetch("https://raw.githubusercontent.com/vasu-313/goldPricesByCities/refs/heads/main/goldPrice.json")
         const data = await response.json()
         // console.log(data.cost.Visakhapatnam)
-        stateCosts = data.cost;
+        cityCosts = data.cost;
+
+        // ✅ Check if user already selected a city before
+        const savedCity = localStorage.getItem("selectedCity");
+        if (savedCity && cityCosts[savedCity]) {
+          citySelect.value = savedCity; // show saved city in dropdown
+          updateCost(savedCity)
+        }
     }
     catch (error) {
         console.error(error)
@@ -87,19 +94,25 @@ const liveCost = async () => {
 
 liveCost();
 
-stateSelect.addEventListener('change', () => {
-    const selectedState = stateSelect.value;
-    // console.log(selectedState)
-    const cost = stateCosts[selectedState];
-    // console.log(cost)
+citySelect.addEventListener('change', () => {
+    const selectedCity = citySelect.value;
+    // console.log(selectedCity)
+    updateCost(selectedCity);
+    localStorage.setItem("selectedCity", selectedCity);
 
-    if (cost) {
+})
+
+ // Show gold cost
+    function updateCost(city) {
+      const cost = cityCosts[city];
+      if (cost) {
         goldCost.innerText = `Live Cost: ₹${cost}/gram`;
         num1.value = cost
-    } else { 
+      } else {
         goldCost.innerText = "Loading...";
+      }
     }
-})
+
 
 
 
@@ -125,3 +138,6 @@ closeBtn.addEventListener("click", () => {
 window.closeMenu = () => {
     sideMenu.classList.remove("active");
 }
+
+
+

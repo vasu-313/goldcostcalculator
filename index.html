@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gold Cost Calculator</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image" href="https://raw.githubusercontent.com/vasu-313/logo-jewellery-shop/refs/heads/main/gold-cost-calculator-logo.webp">
+    <link rel="icon" type="image"
+        href="https://raw.githubusercontent.com/vasu-313/logo-jewellery-shop/refs/heads/main/Frame%2024%20(1).png">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
@@ -24,7 +25,7 @@
 
             <div class="nav-links">
                 <a href="#home">Home</a>
-                <a href="#contact">Contact Us</a>
+                <a href="#contact">Contact</a>
             </div>
         </header>
 
@@ -74,28 +75,44 @@
                     <form action="#">
                         <div class="inputBox">
                             <span>1 Gram Gold Cost(24k)</span>
-                            <input type="text" id="num1">
+                            <input type="number" placeholder="Enter 1 Gram Gold cost" step="any" id="num1">
                         </div>
 
                         <div class="inputBox">
                             <span>Weight(grams)</span>
-                            <input type="text" id="num2">
+                            <input type="number" placeholder="Enter Weight" step="0.01" id="num2">
                         </div>
 
                         <div class="inputBox input-row ">
                             <div class="half-input">
                                 <select id="num3" class="karat-options">
-                                    <option class="selectKarat" value="">Select Karat</option>
+                                    <option class="selectKarat" value="" disabled selected>Select Karat</option>
                                     <option value="24">24K (99.99%)</option>
+                                    <!-- <option value="23">23K (95.83%)</option> -->
                                     <option value="22">22K (91.67%)</option>
+                                    <!-- <option value="21">21K (87.5%)</option> -->
                                     <option value="20">20K (83.33%)</option>
+                                    <!-- <option value="19">19K (79.16%)</option> -->
                                     <option value="18">18K (75%)</option>
-                                    <option value="16">16K (66.67%)</option>
-                                    <option value="14">14K (58.33%)</option>
+                                    <!-- <option value="17">17K (70.83%)</option> -->
+                                    <!-- <option value="16">16K (66.67%)</option> -->
+                                    <!-- <option value="15">15K (62.5%)</option> -->
+                                    <!-- <option value="14">14K (58.33%)</option> -->
+                                    <option value="other">Other</option>
                                 </select>
+
                             </div>
                             <div class="half-input">
-                                <input placeholder="Percentage(%)" type="text" id="num4" class="percentage">
+                                <!-- <input placeholder="Percentage(%)" type="text" id="num4" class="percentage"> -->
+
+                                <select id="num4" class="percentage-options">
+                                    <option class="selectKarat" value="">Select Wastage</option>
+                                    <option value="24,10">10%Wastage - 24K</option>
+                                    <option value="24,15">15%Wastage - 24K</option>
+                                    <option value="22,10">10%Wastage - 22K</option>
+                                    <option value="22,15">15%Wastage - 22K</option>
+                                    <option value="other">Other</option>
+                                </select>
                                 <span class="overlay-text">Click to find Resale value!</span>
                             </div>
                         </div>
@@ -152,6 +169,17 @@
             </div>
         </div>
     </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <p class="footer-text">
+                © <span id="current-year"></span> Gold Cost Calculator. All rights reserved.
+            </p>
+            <p class="footer-subtext">
+                Live prices are updated regularly. Please verify with local dealers before making purchases.
+            </p>
+        </div>
+    </footer>
 
     <script type="module" src="app.js"></script>
 </body>

@@ -14,7 +14,7 @@
 :root {
     --bg-color: #FFFFFF;
     --text-color: #000000;
-    --main-color: #FFD400;
+    --main-color: #FFBF00;
 }
 
 html {
@@ -44,6 +44,8 @@ body {
     padding: 0 30px;
     background: var(--main-color);
     align-items: center;
+    z-index: 999;
+
 }
 
 .logo-text {
@@ -68,8 +70,8 @@ body {
 .second-nav {
     width: 100%;
     margin-top: 70px;
-    background: #8E8971;
-    color: #FFD400;
+    background: #55442B;
+    color: #FFBF00;
 }
 
 .live-cost {
@@ -134,7 +136,7 @@ select#citySelect {
     /* hidden initially */
     width: 150px;
     height: 20%;
-    background: #8E8971;
+    background: #55442B;
     box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
     padding: 20px;
     display: flex;
@@ -243,7 +245,24 @@ body {
     font-weight: 600;
     cursor: pointer;
     font-size: 2rem;
+    overflow: hidden;
+    transition: all 0.2s;
 }
+
+button:active {
+    transform: scale(0.95);
+}
+
+@keyframes fly-1 {
+    from {
+        transform: translateY(0.1em);
+    }
+
+    to {
+        transform: translateY(-0.1em);
+    }
+}
+
 
 
 .inputBox.input-row {
@@ -257,7 +276,7 @@ body {
     width: 45%;
     display: flex;
     flex-direction: column;
-  
+
 }
 
 
@@ -286,9 +305,27 @@ select#num3:focus {
     outline: none;
 }
 
-input#num4 {
+select#num4 {
+    width: 100%;
     padding: 10px 15px;
     height: 53px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    background-color: #fff;
+    color: #333;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='gray'%3E%3Cpath d='M4 6l4 4 4-4z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 16px 16px;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+select#num4:focus {
+    border-color: var(--main-color);
+    outline: none;
 }
 
 .overlay-text {
@@ -296,11 +333,16 @@ input#num4 {
     top: 60.5%;
     left: 29.3%;
     transform: translate(-50%, -50%);
-    pointer-events: none; /* so clicks go to input */
+    pointer-events: none;
+    /* so clicks go to input */
     color: var(--text-color) !important;
-    font-weight: bold !important ;
-    font-size: 10px !important ;
-  }
+    background-color: var(--main-color);
+    border-radius: 10px;
+    padding: 5px 8px;
+    font-weight: bold !important;
+    font-size: 10px !important;
+    z-index: 1;
+}
 
 
 #costBox {
@@ -411,6 +453,30 @@ img {
 
 
 
+/* Footer Styles */
+.footer {
+  background-color: #55442B; 
+  padding: 2rem 0; 
+  margin-top: 5rem; 
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.footer-text {
+  font-size: 0.875rem;
+  color: var(--main-color);
+}
+
+.footer-subtext {
+  font-size: 0.75rem; 
+  color: white; 
+  margin-top: 0.5rem;
+}
 
 
 
@@ -437,10 +503,10 @@ img {
 
 @media (max-width:1440px) {
     .overlay-text {
-        top: 59%;
-        left: 29.1%;
+        top: 58.1%;
+        left: 29%;
     }
-}    
+}
 
 
 @media (max-width: 1024px) {
@@ -467,8 +533,8 @@ img {
     }
 
     .overlay-text {
-    top: 63.5%;
-    left: 63.5%;
+        top: 63.5%;
+        left: 63.5%;
     }
 
 }
@@ -487,7 +553,7 @@ img {
     }
 
     .overlay-text {
-    left: 67.5%;
+        left: 67.5%;
     }
 }
 
@@ -534,6 +600,10 @@ img {
         padding: 10px;
     }
 
+    select#num4 {
+        font-size: 14.5px;
+    }
+
 
 
     .contact {
@@ -562,9 +632,7 @@ img {
         font-size: 20px;
     }
 
-    input#num4 {
-        padding: 10px 15px;
-    }
+
 
     select#citySelect {
         width: 150.88px;
@@ -583,8 +651,8 @@ img {
         top: 54.5%;
         left: 75.5%;
         font-size: 9px !important;
-        
-    
+        padding: 0px 6px;
+
     }
 }
 
@@ -593,6 +661,11 @@ img {
     span.overlay-text {
         top: 59.5%;
         left: 77.5%;
+    }
+
+    select#num4 {
+        font-size: 13px;
+        background-position: right 4px center;
     }
 }
 
@@ -607,9 +680,9 @@ img {
         display: none;
     }
 
-    .percentage::placeholder {
+    /* .percentage::placeholder {
         font-size: 15px;
-    }
+    } */
 
     #one {
         display: none;
@@ -631,7 +704,7 @@ img {
     }
 
     select#citySelect {
-        width: 135.88px;
+        width: 143.88px;
         font-size: 15px;
     }
 
@@ -671,9 +744,9 @@ img {
         font-size: 15px;
     }
 
-    .percentage::placeholder {
+    /* .percentage::placeholder {
         font-size: 14px;
-    }
+    } */
 
     .contentBox {
         margin-bottom: 0px !important;
@@ -686,11 +759,15 @@ img {
     }
 
 
-   span.overlay-text {
+    span.overlay-text {
         left: 76.5%;
         top: 59.2%;
     }
-    
+
+    select#num4 {
+        font-size: 12px;
+    }
+
 
 }
 
@@ -709,18 +786,22 @@ img {
         font-size: 12px;
     }
 
-    .percentage {
+    /* .percentage {
         padding: 10px 15px !important;
     }
 
     .percentage::placeholder {
         font-size: 14px;
+    } */
+
+    select#num4 {
+        height: 45px;
+        font-size: 11px;
+        padding: 10px 6px 10px 6px;
+        background-position: right 3px center;
     }
 
-    input#num4 {
-        height: 45px;
-        padding: 10px 6px 10px 6px !important;
-    }
+
 
     select#num3 {
         height: 45px;
@@ -730,7 +811,7 @@ img {
     }
 
     select#citySelect {
-        width: 104.88px;
+        width: 111.88px;
         font-size: 11px;
     }
 
@@ -741,10 +822,10 @@ img {
     .live-cost {
         padding: 0px 17px 0px 11px;
     }
- 
+
     span.overlay-text {
         left: 75.3%;
-        
+
     }
 
 

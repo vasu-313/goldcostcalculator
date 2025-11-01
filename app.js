@@ -112,7 +112,7 @@ num4.addEventListener("change", function () {
         wastage >= 0 && wastage <= 100
       ) {
        
-        const displayText = `${karat}K(${wastage}%Wastage)`;
+        const displayText = `${wastage}%Wastage - ${karat}K`;
 
         // Check if option already exists
         let exists = false;
